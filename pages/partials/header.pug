@@ -8,7 +8,7 @@ header.header
         div.container.d-flex.justify-content-between.align-items-center
             ul.header-top__left
                 each item in header_top_items
-                    - const { title, link } = item
+                    - const { title, link } = item 
                     li.header-top-item
                         a.btn-link.btn-underline(href=link)=title
             div.header-top__right.ml-auto
@@ -19,16 +19,35 @@ header.header
             +carousel('carouselHeader', carousel_items[0].img, carousel_items)
 
     nav.navbar.navbar-expand-lg
-        div.container
+        div.container.align-items-stretch
             +logo('./assets/img/logo.png')
-            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggler')
+            button.navbar-toggler.align-self-center(type='button', data-toggle='collapse', data-target='#navbarToggler')
                 span.fas.fa-bars
             div#navbarToggler.collapse.navbar-collapse
                 ul.navbar-nav.ml-auto.py-2
                     each item in navbar_items
-                        - const { title, link } = item
-                        li.nav-item
-                            a.btn-link(class=`${current === link ? 'active' : ''}`, href=link)=title
+                        - const { title, link, hasSubmenu } = item
+                        if hasSubmenu
+                            li.nav-item.submenu
+                                a.btn-link(class=`${current === link ? 'active' : ''}`, href=link)=title
+                                div.submenu-content.d-none.d-lg-block
+                                    div.submenu-inner
+                                        div.row
+                                            div.col-lg-8
+                                                div.row
+                                                    each item in submenu_items
+                                                        - const { title, items } = item
+                                                        div.submenu-item.col-4
+                                                            h3=title
+                                                            ul
+                                                                each item in items
+                                                                    li
+                                                                        a.btn-link(href="#")=item
+                                            div.col-lg-4
+                                                img(src="./assets/img/gallery-2.jpg", alt="Wine Banner")
+                        else
+                            li.nav-item
+                                a.btn-link(class=`${current === link ? 'active' : ''}`, href=link)=title
 
 
 // End of Header
