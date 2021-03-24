@@ -1,0 +1,72 @@
+.slider {
+  @include respond-to('extra-small') {
+    display: none;
+  }
+
+  .carousel {
+    .carousel-indicators {
+      bottom: calc(15px + 1vh);
+
+      li {
+        width: calc(25px + 1vw);
+        height: 5px;
+        border-radius: 1px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.4);
+        @include transition-easeinout(0.5s);
+
+        &.active {
+          background-color: $primary-color;
+        }
+      }
+    }
+
+    .carousel-inner {
+      position: relative;
+
+      .carousel-item {
+        max-height: 60vh;
+
+        .carousel-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          color: rgba(255, 255, 255, 0.8);
+          @include transform-translate(-50%, -50%);
+
+          .carousel-title {
+            position: relative;
+            font-size: 20vw;
+            font-family: $font-dancing;
+
+            span {
+              font-family: $font-lobster;
+              @include text-capitalize(2vw, 400);
+            }
+
+            .carousel-subtitle {
+              position: absolute;
+              top: 30%;
+              right: 50%;
+              width: 100%;
+              text-align: right;
+              font-family: $font-roboto;
+              @include text-capitalize(3.5vw, 400);
+              @include transform-translate(30%, -50%);
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      width: 5%;
+      min-width: 40px;
+
+      span {
+        font-size: $fontsize-lg;
+      }
+    }
+  }
+}

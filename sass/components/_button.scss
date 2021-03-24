@@ -1,0 +1,35 @@
+.btn-link {
+  @include transition-easeinout(0.3s);
+
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+
+.btn-underline {
+  position: relative;
+  padding-bottom: 2px;
+  @include transition-easeinout(0.3s);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $primary-color;
+    @include transform-translateX(-50%);
+    @include transition-easeinout(0.3s);
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &.active {
+    width: 100%;
+  }
+}

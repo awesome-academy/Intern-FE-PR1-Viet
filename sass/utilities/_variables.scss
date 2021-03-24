@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lobster&family=Roboto+Slab:wght@300;400;600&display=swap');
 
 $white: #ffffff;
-$black: #111111;
-$gray: #cacaca;
-$light-gray: #ebebeb;
+$black: #000000;
+$gray: #e6e6e6;
+$light-gray: #eeeeee;
 $dark-gray: #818181;
+$blue: #44c7dc;
+$green: #5c911c;
+$orange: #ec7429;
 $red: #c30100;
-$yellow: #d9b400;
-$beige: #e0a887;
+$beige: #f3daae;
+$primary-color: #e3ab39;
 $fontsize-xl: calc(1vw + 2rem);
 $fontsize-lg: calc(1vw + 1rem);
 $fontsize-md: calc(0.2vw + 1rem);
 $fontsize-sm: calc(0.1vw + 0.9rem);
 $responsive-padding: calc(1vh + 0.5rem);
-$primary-font-family: 'Nunito', sans-serif;
-$secondary-font-family: 'Dancing Script', sans-serif;
+$font-dancing: 'Dancing Script', sans-serif;
+$font-lobster: 'Lobster', sans-serif;
+$font-roboto: 'Roboto Slab', sans-serif;
 $breakpoints: (
   'large': (
     max-width: 992px,
