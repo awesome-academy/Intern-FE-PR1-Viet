@@ -728,6 +728,55 @@ img {
     height: 15px;
     border-radius: 3px; }
 
+.btn-secondary {
+  color: #818181;
+  padding: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .btn-secondary:hover {
+    color: #e3ab39; }
+
+.checkmark-item label {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+  padding-left: 25px; }
+  .checkmark-item label input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; }
+    .checkmark-item label input:checked ~ .checkmark {
+      background-color: #e3ab39;
+      border: 1px solid #e3ab39;
+      border-radius: 3px; }
+      .checkmark-item label input:checked ~ .checkmark:after {
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 5px;
+        height: 9px;
+        -webkit-transform: translate(-50%, -50%) rotate(45deg);
+        -ms-transform: translate(-50%, -50%) rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-right: 3px solid #ffffff;
+        border-bottom: 3px solid #ffffff; }
+  .checkmark-item label .checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px; }
+
 .product-item .product-img {
   position: relative;
   cursor: pointer;
@@ -1600,13 +1649,13 @@ img {
       flex-direction: row; }
       .login-register form .input-group label {
         display: inline-block;
-        width: 150px; }
+        width: 170px; }
         @media (max-width: 767px) {
           .login-register form .input-group label {
             display: block;
             width: 100%; } }
       .login-register form .input-group input {
-        width: calc(100% - 150px);
+        width: calc(100% - 170px);
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
         border: 1px solid #e6e6e6;
@@ -1616,7 +1665,7 @@ img {
             width: 100%; } }
     .login-register form .form-options {
       font-size: 0.9rem;
-      padding-left: 150px;
+      padding-left: 170px;
       padding-bottom: 1rem;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1637,10 +1686,27 @@ img {
       .login-register form .form-options .checkmark-item label {
         font-size: 0.9rem; }
     .login-register form button {
-      margin-left: 150px; }
+      margin-left: 170px; }
       @media (max-width: 767px) {
         .login-register form button {
           margin-left: 0; } }
+    .login-register form.register-form h3 {
+      margin-bottom: 1.5rem; }
+    .login-register form.register-form .btn-group {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: flex-end;
+      -ms-flex-pack: flex-end;
+      justify-content: flex-end;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      gap: 0.5rem; }
 
 .banner .banner-img {
   background: url("../assets/img/slide-3.jpg") no-repeat center center/cover;

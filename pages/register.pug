@@ -1,0 +1,53 @@
+extends ./base/base.pug
+
+block variables
+    - const title = "Đăng ký"
+    - const current = "/register.html"
+    - const levels = [["Trang chủ", "/"], ["Đăng Ký", "register.html"]]
+
+include ./components/breadcrumb.pug
+
+block layout
+    include ./partials/header.pug
+
+    +breadcrumb(levels)
+
+    section.login-register
+        div.container
+            div.login-register-header
+                h1.subtitle Đăng ký
+                a.btn.btn-primary.btn-primary--large(href="/login.html") Đăng nhập
+            form.register-form
+                h3 Thông tin cá nhân
+                div.input-group
+                    label(for="firstname") Họ
+                        span.asterisk *
+                    input#firstname(type="text", autocomplete="off")
+                div.input-group
+                    label(for="lastname") Tên
+                        span.asterisk *
+                    input#lastname(type="text", autocomplete="off")
+                div.input-group
+                    label(for="email") Email
+                        span.asterisk *
+                    input#email(type="email", autocomplete="off")
+                div.form-options
+                    div.checkmark-item
+                        label(for="save-pass")
+                            | Đăng ký nhận bản tin
+                            input#save-pass(type="checkbox")
+                            span.checkmark
+                h3 Thông tin đăng nhập
+                div.input-group
+                    label(for="password") Mật khẩu
+                        span.asterisk *
+                    input#password(type="password", autocomplete="off")
+                div.input-group
+                    label(for="re-password") Xác nhận mật khẩu
+                        span.asterisk *
+                    input#re-password(type="password", autocomplete="off")
+                div.btn-group
+                    button.btn.btn-primary Gửi
+                    a.btn.btn-primary(href="/index.html") Quay lại
+    
+    include ./partials/footer.pug

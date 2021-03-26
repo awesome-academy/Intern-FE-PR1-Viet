@@ -72,3 +72,13 @@
     color: $primary-color;
   }
 }
+
+.btn-secondary {
+  color: $dark-gray;
+  padding: 0;
+  @include transition-easeinout(0.3s);
+
+  &:hover {
+    color: $primary-color;
+  }
+}
