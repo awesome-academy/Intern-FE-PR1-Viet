@@ -1,3 +1,13 @@
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 @mixin text-uppercase($fontsize, $fontweight) {
   text-transform: uppercase;
   font-size: $fontsize;
@@ -8,6 +18,15 @@
   text-transform: capitalize;
   font-size: $fontsize;
   font-weight: $fontweight;
+}
+
+@mixin line-limit($linenumber) {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $linenumber;
+  -webkit-box-orient: vertical;
 }
 
 @mixin padding-x($left, $right) {
@@ -109,6 +128,36 @@
   transform: rotate($deg);
 }
 
+@mixin transform-skew($x, $y) {
+  -webkit-transform: skew($x, $y);
+  -ms-transform: skew($x, $y);
+  transform: skew($x, $y);
+}
+
+@mixin transform-skewX($x) {
+  -webkit-transform: skewX($x);
+  -ms-transform: skewX($x);
+  transform: skewX($x);
+}
+
+@mixin transform-skewY($y) {
+  -webkit-transform: skewY($y);
+  -ms-transform: skewY($y);
+  transform: skewY($y);
+}
+
+@mixin transform-translate-skewX($x, $y, $deg) {
+  -webkit-transform: translate($x, $y) skewX($deg);
+  -ms-transform: translate($x, $y) skewX($deg);
+  transform: translate($x, $y) skewX($deg);
+}
+
+@mixin transform-translate-skewY($x, $y, $deg) {
+  -webkit-transform: translate($x, $y) skewY($deg);
+  -ms-transform: translate($x, $y) skewY($deg);
+  transform: translate($x, $y) skewY($deg);
+}
+
 @mixin transform-translate($x, $y) {
   -webkit-transform: translate($x, $y);
   -ms-transform: translate($x, $y);
@@ -143,6 +192,17 @@
   -webkit-transform: translateY($y) rotate($deg);
   -ms-transform: translateY($y) rotate($deg);
   transform: translateY($y) rotate($deg);
+}
+
+@mixin transition-easein($time, $delay: 0) {
+  -webkit-transition: all $time ease-in;
+  -o-transition: all $time ease-in;
+  transition: all $time ease-in;
+  @if $delay != 0 {
+    -webkit-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    transition-delay: $delay;
+  }
 }
 
 @mixin transition-easeinout($time, $delay: 0) {

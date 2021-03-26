@@ -131,8 +131,7 @@
               position: absolute;
               top: 105%;
               left: 50%;
-              opacity: 0;
-              visibility: hidden;
+              @include hidden;
               @include border(9px, transparent);
               @include border-bottom(9px, $primary-color);
               @include transition-easeinout(0.3s);
@@ -150,9 +149,8 @@
             top: 100%;
             width: 1000px;
             z-index: 10;
-            opacity: 0;
-            visibility: hidden;
             background-color: $white;
+            @include hidden;
             @include border(2px, $primary-color);
             @include transition-easeinout(0.3s);
             @include transform-translate(-50%, -1rem);
@@ -197,15 +195,13 @@
               }
 
               &:after {
-                opacity: 1;
-                visibility: visible;
+                @include show;
                 @include transform-translate(-50%, 0);
               }
             }
 
             .submenu-content {
-              opacity: 1;
-              visibility: visible;
+              @include show;
               @include transform-translate(-50%, 0);
             }
           }

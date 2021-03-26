@@ -60,5 +60,65 @@ block layout
                 +carouselMultiple("carousel-multiple-1", productItems, 2)
             div.d-sm-none
                 +carouselMultiple("carousel-multiple-1", productItems, 1)
+
+    section.category
+        div.container-fluid
+            div.row
+                each item in categories
+                    - const { title, year, img } = item
+                    div.col-lg-3.col-md-4.col-sm-6.p-0
+                        div.category-item.hover-effect-primary(style="background-image: url(./assets/img/" + img + ")")
+                            div.category-text.hover-text
+                                span=year
+                                h1=title
+
+
+    section.selling-product
+        div.container
+            h1.title Sản phẩm bán chạy
+            div.d-none.d-lg-block
+                +carouselMultiple("carousel-multiple-2", productItems.filter(item => item.type === 'hot'), 4)
+            div.d-none.d-lg-none.d-md-block
+                +carouselMultiple("carousel-multiple-2", productItems.filter(item => item.type === 'hot'), 3)
+            div.d-none.d-md-none.d-sm-block
+                +carouselMultiple("carousel-multiple-2", productItems.filter(item => item.type === 'hot'), 2)
+            div.d-sm-none
+                +carouselMultiple("carousel-multiple-2", productItems.filter(item => item.type === 'hot'), 1)
+
+    section.more
+        div.container
+            div.row
+                div.col-lg-8.col-md-6
+                    div.news-section
+                        h1.title Tin tức &amp; blog
+                        div.row
+                            div.col-12.col-lg-6
+                                div.news-item
+                                    div.news-img.hover-effect-secondary
+                                        a(href="#" style="background-image: url(./assets/img/slide-1.jpg)")
+                                            span.fas.fa-link
+                                    div.news-text
+                                        a.btn-link(href="#") Vang thăng long classic
+                                        h3 Đăng bởi Giangle | 30/06/2015 | 60 bình luận
+                                        p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
+                                        a.btn.btn-secondary(href="#") Read more 
+                            div.col-12.col-lg-6
+                                div.news-item
+                                    div.news-img.hover-effect-secondary
+                                        a(href="#" style="background-image: url(./assets/img/slide-2.jpg)")
+                                            span.fas.fa-link
+                                    div.news-text
+                                        a.btn-link(href="#") Vang thăng long classic
+                                        h3 Đăng bởi Giangle | 30/06/2015 | 60 bình luận
+                                        p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
+                                        a.btn.btn-secondary(href="#") Read more 
+                div.col-lg-4.col-md-6
+                    div.customer-section
+                        h1.title Khách hàng
+                        span.fas.fa-quote-right
+                        p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
+                        a.btn.btn-secondary(href="#") Read more
+                        div.customer.col-6.offset-3
+                            +carousel("customer", customers[0].img, customers)
                                                         
     include ./partials/footer.pug
