@@ -7,3 +7,19 @@
     }
   }
 }
+
+.title {
+  text-align: center;
+  letter-spacing: 3px;
+  padding-bottom: 20px;
+  margin-bottom: 1.8rem;
+  background: url('../assets/img/title-dark.png') no-repeat center bottom;
+  @include text-uppercase(1.2rem, 400);
+}
+
+.subtitle {
+  text-align: left;
+  padding-bottom: 15px;
+  background: url('../assets/img/titleleft-dark.png') no-repeat left bottom;
+  @include text-uppercase(1.1rem, 400);
+}
