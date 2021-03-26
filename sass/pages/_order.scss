@@ -1,0 +1,122 @@
+.order {
+  padding-bottom: 4rem;
+
+  .order-content {
+    h1 {
+      padding-bottom: 1rem;
+      @include text-uppercase(1rem, 400);
+    }
+
+    .order-list {
+      .order-list-top {
+        background-color: $light;
+        padding: 1.8rem 1.4rem;
+        @include border(1px, $gray);
+        @include border-bottom(0, transparent);
+
+        h3 {
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 0;
+        }
+
+        ul {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          margin-left: -0.8rem;
+          margin-right: -0.8rem;
+          @include flex(inherit, center, row);
+
+          li {
+            position: relative;
+            font-size: 0.9rem;
+            padding: 0.2rem 0.8rem;
+
+            &:not(:last-of-type) {
+              &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: 15px;
+                @include transform-translateY(-50%);
+                @include border-right(1px, $dark-gray);
+              }
+            }
+          }
+        }
+      }
+
+      .order-table {
+        width: 100%;
+        min-width: 650px;
+        border-collapse: collapse;
+
+        tr th,
+        tr td {
+          padding: 0.3rem 0.6rem;
+          font-size: 0.9rem;
+          text-align: center;
+          @include border(1px, $gray);
+        }
+
+        tr th {
+          @include text-uppercase(0.85rem, 400);
+        }
+
+        tr td {
+          span {
+            color: $dark-gray;
+            font-size: 0.8rem;
+          }
+
+          button {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  .customer-info {
+    padding: 1.8rem 1.4rem;
+    margin-bottom: 1.5rem;
+    background-color: $light;
+    @include border(1px, $gray);
+
+    .info-item {
+      position: relative;
+      padding-left: 25px;
+      padding-bottom: 10px;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        word-break: break-word;
+      }
+
+      span {
+        position: absolute;
+        left: 0;
+        top: 5px;
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      @include border-bottom(1px, $black);
+      @include transition-easeinout(0.3s);
+
+      &:hover {
+        color: $primary-color;
+        @include border-bottom(1px, $primary-color);
+      }
+    }
+  }
+}

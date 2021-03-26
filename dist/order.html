@@ -16,7 +16,7 @@
     <link href="./assets/lib/elegant-icon/elegant-icon.css" rel="stylesheet">
     <!-- Styles-->
     <link href="./css/main.css" rel="stylesheet">
-    <title>Đăng nhập | Wine Shop</title>
+    <title>Danh sách đơn hàng | Wine Shop</title>
   </head>
   <body>
     <!-- Header-->
@@ -196,35 +196,162 @@
       <div class="container"> 
         <ol class="breadcrumb"> 
           <li class="breadcrumb-item"> <a href="/">Trang chủ</a></li>
-          <li class="breadcrumb-item active">Đăng nhập</li>
+          <li class="breadcrumb-item active">Danh sách đơn hàng</li>
         </ol>
       </div>
     </nav>
-    <section class="login-register">
+    <section class="order">
       <div class="container">
-        <div class="login-register-header">
-          <h1 class="subtitle">Đăng nhập</h1><a class="btn btn-primary btn-primary--large" href="/register.html">Đăng ký</a>
+        <h1 class="subtitle">Đơn hàng</h1>
+        <div class="order-content">
+          <div class="row">
+            <div class="col-lg-9 order-2 order-lg-1">
+              <div class="order-list">
+                <div class="order-list-top">
+                  <h1>Danh sách đơn hàng</h1>
+                  <h3>Trạng thái</h3>
+                  <ul>
+                    <li><a class="btn-link" href="#">Tất cả (16)</a></li>
+                    <li><a class="btn-link" href="#">Đã hủy (10)</a></li>
+                    <li><a class="btn-link" href="#">Chưa duyệt (0)</a></li>
+                    <li><a class="btn-link" href="#">Đã duyệt (0)</a></li>
+                    <li><a class="btn-link" href="#">Đã thanh toán - chờ mua hàng (0)</a></li>
+                    <li><a class="btn-link" href="#">Đã mua hàng (0)</a></li>
+                    <li><a class="btn-link" href="#">Hàng đã về - chờ giao hàng (0)</a></li>
+                    <li><a class="btn-link" href="#">Đã kết thúc (6)</a></li>
+                  </ul>
+                </div>
+                <div class="table-responsive">
+                  <table class="order-table">
+                    <colgroup>
+                      <col width="8%">
+                      <col width="29%">
+                      <col width="15%">
+                      <col width="8%">
+                      <col width="12.5%">
+                      <col width="15%">
+                      <col width="12.5%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                        <th>Mã hóa đơn/Ngày mua hàng</th>
+                        <th>Kho nhận hàng</th>
+                        <th>Số SP</th>
+                        <th>Tổng tiền</th>
+                        <th>Tình trạng</th>
+                        <th>Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01</td>
+                        <td class="text-left">
+                          <p>LEANHGIANG89 - 17/06/2015</p><span>01:36 14/03/2015</span>
+                        </td>
+                        <td>HÀ ĐÔNG</td>
+                        <td>7</td>
+                        <td>350.000đ</td>
+                        <td>Đã thanh toán</td>
+                        <td>
+                          <button class="btn btn-link">Chi tiết</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>02</td>
+                        <td class="text-left">
+                          <p>LEANHGIANG89 - 17/06/2015</p><span>01:36 14/03/2015</span>
+                        </td>
+                        <td>HÀ ĐÔNG</td>
+                        <td>7</td>
+                        <td>350.000đ</td>
+                        <td>Đã thanh toán</td>
+                        <td>
+                          <button class="btn btn-link">Chi tiết</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>03</td>
+                        <td class="text-left">
+                          <p>LEANHGIANG89 - 17/06/2015</p><span>01:36 14/03/2015</span>
+                        </td>
+                        <td>HÀ ĐÔNG</td>
+                        <td>7</td>
+                        <td>350.000đ</td>
+                        <td>Đã thanh toán</td>
+                        <td>
+                          <button class="btn btn-link">Chi tiết</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>04</td>
+                        <td class="text-left">
+                          <p>LEANHGIANG89 - 17/06/2015</p><span>01:36 14/03/2015</span>
+                        </td>
+                        <td>HÀ ĐÔNG</td>
+                        <td>7</td>
+                        <td>350.000đ</td>
+                        <td>Đã thanh toán</td>
+                        <td>
+                          <button class="btn btn-link">Chi tiết</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>05</td>
+                        <td class="text-left">
+                          <p>LEANHGIANG89 - 17/06/2015</p><span>01:36 14/03/2015</span>
+                        </td>
+                        <td>HÀ ĐÔNG</td>
+                        <td>7</td>
+                        <td>350.000đ</td>
+                        <td>Đã thanh toán</td>
+                        <td>
+                          <button class="btn btn-link">Chi tiết</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>06</td>
+                        <td class="text-left">
+                          <p>LEANHGIANG89 - 17/06/2015</p><span>01:36 14/03/2015</span>
+                        </td>
+                        <td>HÀ ĐÔNG</td>
+                        <td>7</td>
+                        <td>350.000đ</td>
+                        <td>Đã thanh toán</td>
+                        <td>
+                          <button class="btn btn-link">Chi tiết</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 order-1 order-lg-2">
+              <div class="customer-info">
+                <h1>Thông tin khách hàng</h1>
+                <div class="row">
+                  <div class="col-lg-12 col-sm-4">
+                    <div class="info-item"><span class="fas fa-user"></span>
+                      <h3>GiangLe</h3>
+                      <p>Leanhgiang89@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-sm-4">
+                    <div class="info-item"><span class="fas fa-map-marker-alt"></span>
+                      <p>Tòa nhà Hà Nội group 442 Đội Cấn, Ba Đình Hà Nội</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-sm-4">
+                    <div class="info-item"><span class="fas fa-phone-alt"></span>
+                      <p>(04) 3786 8904</p>
+                    </div>
+                  </div>
+                </div><a href="#">Chi tiết địa chỉ</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <form class="login-form">
-          <h3>Khách hàng đăng nhập</h3>
-          <p>Nếu bạn có một tài khoản, xin vui lòng đăng nhập.</p>
-          <div class="input-group">
-            <label for="email">Email<span class="asterisk">*</span></label>
-            <input id="email" type="email" autocomplete="off">
-          </div>
-          <div class="input-group">
-            <label for="password">Password<span class="asterisk">*</span></label>
-            <input id="password" type="password" autocomplete="off">
-          </div>
-          <div class="form-options">
-            <div class="checkmark-item">
-              <label for="save-pass">Lưu mật khẩu
-                <input id="save-pass" type="checkbox"><span class="checkmark"></span>
-              </label>
-            </div><a class="btn-link" href="#">Quên mật khẩu?</a>
-          </div>
-          <button class="btn btn-primary">Đăng nhập</button>
-        </form>
       </div>
     </section>
     <!-- Footer-->
