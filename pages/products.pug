@@ -70,6 +70,13 @@ block layout
                                         div.col-md-4.col-sm-6
                                             +product-grid(type, name, img, price, newPrice)
                             input#list-view.rad(type='radio', name='radio')
+                            div.product-list
+                                div.row
+                                    - for (var i = 0; i < 4; i++)
+                                        - const { name, img, price, newPrice, type, desc } = productItems[i]
+                                        div.col-12
+                                            +product-list(type, name, img, price, newPrice, desc)
+
                     
 
         

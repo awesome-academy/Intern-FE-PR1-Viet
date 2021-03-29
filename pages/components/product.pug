@@ -24,3 +24,32 @@ mixin product-grid(type, name, img, price, newPrice)
                     p.new-price=price
                         span đ
             btn.btn.btn-primary Add to cart
+
+mixin product-list(type, name, img, price, newPrice, desc)
+    div.product-item.product-item--list
+        div.row
+            div.col-md-4.col-sm-6
+                div.product-img(class=`${type ? 'product--' + type : ''}`)
+                    img(src="./assets/img/" + img, alt=name)
+            div.col-md-8.col-sm-6
+                div.product-text
+                    a.product-name.btn-link(href="#")=name
+                    div.product-price
+                        if type === 'sale'
+                            p.new-price=newPrice
+                                span đ
+                            span -
+                            p.old-price=price
+                                span đ
+                        else
+                            p.new-price=price
+                                span đ
+                    p.product-desc=desc
+                    div.product-widget
+                        btn.btn.btn-primary Add to cart
+                        div.product-widget-item
+                            span.icon_heart
+                            | Yêu thích
+                        div.product-widget-item
+                            span.fas.fa-signal
+                            | So sánh
