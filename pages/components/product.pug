@@ -1,5 +1,5 @@
-mixin product(type, name, img, price, newPrice)
-    div.product-item
+mixin product-grid(type, name, img, price, newPrice)
+    div.product-item.product-item--grid
         div.product-img(class=`${type ? 'product--' + type : ''}`)
             img(src="./assets/img/" + img, alt=name)
             div.product-widget
