@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lobster&family=Roboto+Slab:wght@300;400;500;600&display=swap");
 .logo img {
   width: 100px;
@@ -22,6 +23,7 @@
 .subtitle {
   text-align: left;
   padding-bottom: 15px;
+  margin-bottom: 1.5rem;
   background: url("../assets/img/titleleft-dark.png") no-repeat left bottom;
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -559,6 +561,22 @@ img {
       -webkit-filter: grayscale(1);
       filter: grayscale(1); }
 
+.breadcrumb {
+  padding-top: calc(calc(1vh + 0.5rem) * 1.5);
+  padding-left: 0;
+  padding-bottom: 0.5rem;
+  background-color: transparent;
+  font-size: 1rem; }
+  .breadcrumb .breadcrumb-item a {
+    color: #818181; }
+  .breadcrumb .breadcrumb-item:before {
+    padding-left: 5px;
+    padding-right: 0px; }
+  .breadcrumb .breadcrumb-item.active {
+    color: #e3ab39; }
+    .breadcrumb .breadcrumb-item.active:before {
+      padding-right: 5px; }
+
 .btn-link {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -650,9 +668,15 @@ img {
       -webkit-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
+      @media (max-width: 400px) {
+        .product-item .product-img .product-widget .product-widget-item {
+          font-size: 0.7rem; } }
       .product-item .product-img .product-widget .product-widget-item span {
         font-size: 1rem;
         padding-right: 5px; }
+        @media (max-width: 400px) {
+          .product-item .product-img .product-widget .product-widget-item span {
+            font-size: 0.8rem; } }
       .product-item .product-img .product-widget .product-widget-item:not(:last-of-type) {
         width: 40%;
         border-right: 1px solid #818181; }
@@ -745,8 +769,8 @@ img {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem; }
+  padding-top: 0;
+  padding-bottom: 1.2rem; }
   .product-item.product-item--big .product-text .product-price .new-price {
     font-size: 1.7rem; }
 
@@ -1015,3 +1039,66 @@ img {
     .customer-section .customer .carousel .carousel-control-prev,
     .customer-section .customer .carousel .carousel-control-next {
       display: none; }
+
+.banner .banner-img {
+  background: url("../assets/img/slide-3.jpg") no-repeat center center/cover;
+  height: 35vh; }
+
+.product {
+  padding-top: 2rem;
+  padding-bottom: 4rem; }
+  .product .product-sidebar > div {
+    padding-bottom: 2rem; }
+  .product .product-sidebar .product-category h3 {
+    color: #818181;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 500; }
+  .product .product-sidebar .product-category li a {
+    position: relative;
+    color: #818181;
+    font-size: 0.9rem;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    white-space: pre-wrap; }
+    .product .product-sidebar .product-category li a span {
+      padding-left: 5px; }
+    .product .product-sidebar .product-category li a:after {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      font-size: 1.7rem;
+      color: #e3ab39;
+      -webkit-transform: translate(-1rem, -50%);
+      -ms-transform: translate(-1rem, -50%);
+      transform: translate(-1rem, -50%);
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .product .product-sidebar .product-category li:last-of-type {
+    padding-bottom: 0.5rem; }
+  .product .product-sidebar .product-category li:hover a, .product .product-sidebar .product-category li.active a {
+    color: #e3ab39;
+    padding-left: 15px; }
+    .product .product-sidebar .product-category li:hover a:after, .product .product-sidebar .product-category li.active a:after {
+      -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%); }
+  .product .product-sidebar .product-compare p {
+    font-size: 0.85rem;
+    color: #818181; }
+  .product .product-sidebar .product-tag .tags .tag {
+    display: inline-block;
+    padding: 3px 6px;
+    color: #818181;
+    font-size: 0.85rem;
+    margin-right: 2px;
+    margin-bottom: 7px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6; }
+    .product .product-sidebar .product-tag .tags .tag.tag--active {
+      background-color: #e3ab39;
+      color: #ffffff; }

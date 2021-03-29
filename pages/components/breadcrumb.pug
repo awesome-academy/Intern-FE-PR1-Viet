@@ -1,0 +1,11 @@
+mixin breadcrumb(levels)
+    nav 
+        div.container 
+            ol.breadcrumb 
+                each level, index in levels
+                    - let count = index + 1
+                    if count < levels.length
+                        li.breadcrumb-item 
+                            a(href="" + level[1])= level[0]
+                    else
+                        li.breadcrumb-item.active= level[0]

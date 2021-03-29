@@ -20,6 +20,7 @@
 .subtitle {
   text-align: left;
   padding-bottom: 15px;
+  margin-bottom: 1.5rem;
   background: url('../assets/img/titleleft-dark.png') no-repeat left bottom;
   @include text-uppercase(1.1rem, 400);
 }

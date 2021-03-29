@@ -8,8 +8,10 @@
 @import 'layouts/header';
 @import 'layouts/footer';
 
+@import 'components/breadcrumb';
 @import 'components/button';
 @import 'components/product';
 @import 'components/slider';
 
 @import 'pages/index';
+@import 'pages/products';
