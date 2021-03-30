@@ -3,8 +3,26 @@ extends ./base/base.pug
 block variables
     - const title = "Thông tin"
     - const current = "/about.html"
+    - const levels = [["Trang chủ", "/"], ["Giới thiệu", "about.html"]]
+
+include ./components/breadcrumb.pug
 
 block layout
     include ./partials/header.pug
+
+    +breadcrumb(levels)
     
+    section.about
+        div.container
+            h1.subtitle Giới thiệu
+            div.about-container
+                div.row
+                    div.col-lg-5.col-md-6
+                        div.about-img
+                    div.col-md-6
+                        div.about-content
+                            h1 Chào mừng đến với wine hourse
+                            p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
+                            p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
+
     include ./partials/footer.pug

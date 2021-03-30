@@ -1,0 +1,28 @@
+.about {
+  .about-container {
+    padding-bottom: 4rem;
+
+    .about-img {
+      background: url('../assets/img/contact.jpg') no-repeat center center /
+        cover;
+      width: 100%;
+      height: 0;
+      padding-top: 62.5%;
+      margin-bottom: 1rem;
+    }
+
+    .about-content {
+      h1 {
+        letter-spacing: 2px;
+        padding-bottom: 0.5rem;
+        @include text-uppercase($fontsize-md, 400);
+      }
+
+      p {
+        color: $dark-gray;
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}
