@@ -5,9 +5,11 @@ block variables
     - const current = "/"
     include ./variables/index_variables.pug
     include ./variables/product_variables.pug
+    include ./variables/blog_variables.pug
 
 include ./components/carousel.pug
 include ./components/product.pug
+include ./components/blog.pug
 
 block layout
     include ./partials/header.pug
@@ -95,26 +97,10 @@ block layout
                     div.news-section
                         h1.title Tin tức &amp; blog
                         div.row
-                            div.col-12.col-lg-6
-                                div.news-item
-                                    div.news-img.hover-effect-secondary
-                                        a(href="#" style="background-image: url(./assets/img/slide-1.jpg)")
-                                            span.fas.fa-link
-                                    div.news-text
-                                        a.btn-link(href="#") Vang thăng long classic
-                                        h3 Đăng bởi Giangle | 30/06/2015 | 60 bình luận
-                                        p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
-                                        a.btn.btn-secondary(href="#") Read more 
-                            div.col-12.col-lg-6
-                                div.news-item
-                                    div.news-img.hover-effect-secondary
-                                        a(href="#" style="background-image: url(./assets/img/slide-2.jpg)")
-                                            span.fas.fa-link
-                                    div.news-text
-                                        a.btn-link(href="#") Vang thăng long classic
-                                        h3 Đăng bởi Giangle | 30/06/2015 | 60 bình luận
-                                        p Vang nổ Thăng long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang thăng long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng bởi chai có dung tích là 750ml.
-                                        a.btn.btn-secondary(href="#") Read more 
+                            - for (var i = 0; i < 2; i++)
+                                - const { title, img, desc, author, date, comments } = blogs[i];
+                                div.col-12.col-lg-6
+                                    +blog(title, img, desc, author, date, comments)
                 div.col-lg-4.col-md-6
                     div.customer-section
                         h1.title Khách hàng

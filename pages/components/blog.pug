@@ -1,0 +1,10 @@
+mixin blog(title, img, desc, author, date, comments)
+    div.blog-item
+        div.blog-img.hover-effect-secondary
+            a(href="#" style=`background-image: url(./assets/img/${img})`)
+                span.fas.fa-link
+        div.blog-text
+            a.btn-link(href="#")=title
+            h3=`Đăng bởi ${author} | ${date} | ${comments.length} bình luận`
+            p=desc
+            a.btn.btn-secondary(href="#") Read more

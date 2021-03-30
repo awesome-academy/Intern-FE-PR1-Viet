@@ -3,8 +3,25 @@ extends ./base/base.pug
 block variables
     - const title = "Blog"
     - const current = "/blog.html"
+    - const levels = [["Trang chủ", "/"], ["Blog", "blog.html"]]
+    include ./variables/blog_variables.pug
+
+include ./components/breadcrumb.pug
+include ./components/blog.pug
 
 block layout
     include ./partials/header.pug
+
+    +breadcrumb(levels)
+
+    section.blog
+        div.container
+            h1.subtitle Blog
+            div.blog-container
+                div.row
+                    each item in blogs
+                        - const { title, img, desc, author, date, comments } = item;
+                            div.col-lg-4.col-md-6
+                                +blog(title, img, desc, author, date, comments)
         
     include ./partials/footer.pug
