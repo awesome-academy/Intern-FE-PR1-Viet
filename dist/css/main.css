@@ -213,6 +213,14 @@ select:focus {
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type='number'] {
+  -moz-appearance: textfield; }
+
 textarea {
   resize: none; }
 
@@ -1142,6 +1150,69 @@ img {
     .customer-section .customer .carousel .carousel-control-prev,
     .customer-section .customer .carousel .carousel-control-next {
       display: none; }
+
+.cart {
+  padding-bottom: 4rem; }
+  .cart .table-responsive {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem; }
+    .cart .table-responsive .cart-table {
+      display: block;
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse; }
+      .cart .table-responsive .cart-table tr th {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 500; }
+      .cart .table-responsive .cart-table tr th,
+      .cart .table-responsive .cart-table tr td {
+        padding: 0.9rem 0.8rem;
+        background-color: #fafafa;
+        text-align: center;
+        border: 1px solid #e6e6e6; }
+        @media (max-width: 575px) {
+          .cart .table-responsive .cart-table tr th,
+          .cart .table-responsive .cart-table tr td {
+            font-size: 0.9rem;
+            padding: 0.7rem 0.6rem; } }
+      .cart .table-responsive .cart-table .cart-name {
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        font-weight: 500; }
+      .cart .table-responsive .cart-table .cart-price p,
+      .cart .table-responsive .cart-table .cart-total p {
+        display: inline-block;
+        position: relative;
+        color: #e3ab39;
+        font-size: 1.2rem; }
+        @media (max-width: 575px) {
+          .cart .table-responsive .cart-table .cart-price p,
+          .cart .table-responsive .cart-table .cart-total p {
+            font-size: 1rem; } }
+        .cart .table-responsive .cart-table .cart-price p span,
+        .cart .table-responsive .cart-table .cart-total p span {
+          position: absolute;
+          top: 0;
+          right: -8px;
+          font-size: 13px; }
+      .cart .table-responsive .cart-table .cart-amount input {
+        text-align: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 2px;
+        border: 1px solid #e6e6e6; }
+      .cart .table-responsive .cart-table .cart-remove span {
+        cursor: pointer;
+        font-size: 1.3rem;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        .cart .table-responsive .cart-table .cart-remove span:hover {
+          color: #e3ab39; }
+  .cart .cart-controls button {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem; }
 
 .banner .banner-img {
   background: url("../assets/img/slide-3.jpg") no-repeat center center/cover;

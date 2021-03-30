@@ -1,0 +1,83 @@
+.cart {
+  padding-bottom: 4rem;
+
+  .table-responsive {
+    @include margin-y(0.5rem, 1.5rem);
+
+    .cart-table {
+      display: block;
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+
+      tr th {
+        @include text-uppercase(1rem, 500);
+      }
+
+      tr th,
+      tr td {
+        padding: 0.9rem 0.8rem;
+        background-color: $light;
+        text-align: center;
+        @include border(1px, $gray);
+
+        @include respond-to('small') {
+          font-size: 0.9rem;
+          padding: 0.7rem 0.6rem;
+        }
+      }
+
+      .cart-name {
+        @include text-uppercase(0.95rem, 500);
+      }
+
+      .cart-price,
+      .cart-total {
+        p {
+          display: inline-block;
+          position: relative;
+          color: $primary-color;
+          font-size: 1.2rem;
+
+          @include respond-to('small') {
+            font-size: 1rem;
+          }
+
+          span {
+            position: absolute;
+            top: 0;
+            right: -8px;
+            font-size: 13px;
+          }
+        }
+      }
+
+      .cart-amount {
+        input {
+          text-align: center;
+          @include square(35px, 2px);
+          @include border(1px, $gray);
+        }
+      }
+
+      .cart-remove {
+        span {
+          cursor: pointer;
+          font-size: 1.3rem;
+          @include transition-easeinout(0.3s);
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .cart-controls {
+    button {
+      margin-left: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

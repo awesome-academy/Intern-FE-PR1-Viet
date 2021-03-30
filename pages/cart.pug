@@ -1,0 +1,58 @@
+extends ./base/base.pug
+
+block variables
+    - const title = "Giỏ hàng"
+    - const current = "/cart.html"
+    - const levels = [["Trang chủ", "/"], ["Sản phẩm", "products.html"], ["Giỏ hàng", "cart.html"]]
+    include ./variables/product_variables.pug
+
+include ./components/breadcrumb.pug
+
+block layout
+    include ./partials/header.pug
+
+    +breadcrumb(levels)
+
+    section.cart
+        div.container
+            h2.subtitle Giỏ hàng
+            div.table-responsive
+                table.cart-table
+                    colgroup
+                        col(width="15%")
+                        col(width="35%")
+                        col(width="15%")
+                        col(width="15%")
+                        col(width="15%")
+                        col(width="5%")
+                    thead
+                        tr
+                            th Ảnh
+                            th Tên sản phẩm
+                            th Giá
+                            th Số lượng
+                            th Tổng số
+                            th Xóa
+                    tbody
+                        - for (var i = 0; i < 4; i++)
+                            - const { name, img, price, oldPrice } = productItems[i]
+                            tr
+                                td.cart-img
+                                    img(src=`./assets/img/${img}` alt=name)
+                                td.cart-name=name
+                                td.cart-price
+                                    p=price
+                                        span đ
+                                td.cart-amount
+                                    input(type="number" value="1" min="1" max="100")
+                                td.cart-total
+                                    p=price
+                                        span đ
+                                td.cart-remove
+                                    span.far.fa-trash-alt
+            div.cart-controls.text-right
+                button.btn.btn-primary Tiếp tục mua hàng
+                button.btn.btn-primary Xóa
+                button.btn.btn-primary Cập nhật
+    
+    include ./partials/footer.pug
