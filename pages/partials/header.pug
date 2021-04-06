@@ -1,0 +1,34 @@
+include ../base/mixins.pug
+include ../variables/header_variables.pug
+include ../components/carousel.pug
+
+// Header
+header.header
+    div.header-top
+        div.container.d-flex.justify-content-between.align-items-center
+            ul.header-top__left
+                each item in header_top_items
+                    - const { title, link } = item
+                    li.header-top-item
+                        a.btn-link.btn-underline(href=link)=title
+            div.header-top__right.ml-auto
+                div.input-group
+                    input(type='text', placeholder='Tìm kiếm ở đây...')
+                    span.fas.fa-search
+        - if (current === '/')
+            +carousel('carouselHeader', carousel_items[0].img, carousel_items)
+
+    nav.navbar.navbar-expand-lg
+        div.container
+            +logo('./assets/img/logo.png')
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggler')
+                span.fas.fa-bars
+            div#navbarToggler.collapse.navbar-collapse
+                ul.navbar-nav.ml-auto.py-2
+                    each item in navbar_items
+                        - const { title, link } = item
+                        li.nav-item
+                            a.btn-link(class=`${current === link ? 'active' : ''}`, href=link)=title
+
+
+// End of Header

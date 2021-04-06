@@ -1,0 +1,9 @@
+.logo {
+  img {
+    @include square(100px);
+
+    @include respond-to('small') {
+      @include square(70px);
+    }
+  }
+}

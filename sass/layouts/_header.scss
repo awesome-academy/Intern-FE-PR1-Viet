@@ -1,0 +1,109 @@
+.header {
+  .header-top {
+    .container {
+      @include padding-y(0.5rem, 0.5rem);
+    }
+
+    .header-top__left {
+      @include flex(inherit, center, row);
+      .header-top-item {
+        @include respond-to('large') {
+          &:not(:nth-last-of-type(-n + 2)) {
+            display: none;
+          }
+        }
+
+        .btn-link {
+          font-size: 0.85rem;
+          color: $dark-gray;
+          @include margin-x(0.5rem, 0.5rem);
+        }
+
+        &:first-of-type {
+          .btn-link {
+            margin-left: 0;
+          }
+        }
+
+        &:not(:last-of-type):after {
+          content: '-';
+        }
+      }
+    }
+
+    .header-top__right {
+      .input-group {
+        position: relative;
+        width: 180px;
+
+        @include respond-to('small') {
+          width: 100px;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.2rem 1.5rem 0.2rem 0.7rem;
+          font-style: italic;
+          font-size: 0.8rem;
+          @include border(1px, $light-gray, 5px);
+        }
+
+        span {
+          position: absolute;
+          top: 50%;
+          right: 7px;
+          z-index: 2;
+          color: $dark-gray;
+          font-size: 0.9rem;
+          @include transform-translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .navbar {
+    background-color: $black;
+    @include padding-y(0.5rem, 0.5rem);
+
+    button {
+      color: $primary-color;
+      padding: 0.3rem 0.5rem;
+      font-size: 1.3rem;
+      @include border(2px, $primary-color);
+    }
+
+    .navbar-collapse {
+      .nav-item {
+        letter-spacing: 2px;
+        padding: 5px 1vw;
+        @include text-uppercase(0.8rem, 500);
+
+        .btn-link {
+          color: $white;
+          @include padding-y(5px, 5px);
+
+          &.active {
+            color: $primary-color;
+          }
+
+          @include respond-to('large') {
+            font-size: 0.85rem;
+            display: block;
+
+            &.active {
+              @include border-bottom(1px, $primary-color);
+            }
+          }
+        }
+
+        &:last-of-type {
+          padding-right: 0;
+        }
+
+        @include respond-to('large') {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
