@@ -20,6 +20,9 @@ $font-dancing: 'Dancing Script', sans-serif;
 $font-lobster: 'Lobster', sans-serif;
 $font-roboto: 'Roboto Slab', sans-serif;
 $breakpoints: (
+  'extra-large': (
+    max-width: 1200px,
+  ),
   'large': (
     max-width: 992px,
   ),

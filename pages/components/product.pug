@@ -1,0 +1,26 @@
+mixin product(type, name, img, price, newPrice)
+    div.product-item
+        div.product-img(class=`${type ? 'product--' + type : ''}`)
+            img(src="./assets/img/" + img, alt=name)
+            div.product-widget
+                div.product-widget-item
+                    span.icon_heart
+                    | Yêu thích
+                div.product-widget-item
+                    span.fas.fa-signal
+                    | So sánh
+                div.product-widget-item
+                    span.fas.fa-compress-alt
+        div.product-text.text-center
+            a.product-name.btn-link(href="#")=name
+            div.product-price
+                if type === 'sale'
+                    p.new-price=newPrice
+                        span đ
+                    span -
+                    p.old-price=price
+                        span đ
+                else
+                    p.new-price=price
+                        span đ
+            btn.btn.btn-primary Add to cart

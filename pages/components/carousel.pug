@@ -28,3 +28,29 @@ mixin carousel(id, defaultImg, array)
                 span.fas.fa-chevron-left
             a.carousel-control-next(href="#" + id, role="button", data-slide="next")
                 span.fas.fa-chevron-right
+
+mixin carouselMultiple(id, array, numberItem)
+    div.carousel.slide.carousel-multi-item(id=id + numberItem, data-pause="false", data-ride="carousel", data-interval="5000")
+        div.controls-top
+            a.carousel-multi-prev(href="#" + id + numberItem, data-slide="prev")
+                i.fas.fa-arrow-left
+            a.carousel-multi-next(href="#" + id + numberItem, data-slide="next")
+                i.fas.fa-arrow-right
+        div.carousel-inner(role="listbox")
+            - for (var i = 0; i < Math.round(array.length / numberItem); i++)
+                - var condition1 = ((i + 1) * numberItem) > array.length ? array.length : (i + 1) * numberItem
+                - var condition2 = numberItem === 1 ? 'col-8 offset-2' : 'col-' + 12 / numberItem;
+                if i === 0
+                    div.carousel-item.active
+                        div.row
+                            - for (var j = i * numberItem; j < condition1 ; j++)
+                                div(class=condition2)
+                                    - const { name, img, price, newPrice, type } = array[j]
+                                    +product(type, name, img, price, newPrice)
+                else
+                    div.carousel-item
+                        div.row
+                            - for (var j = i * numberItem; j < condition1 ; j++)
+                                div(class=condition2)
+                                    - const { name, img, price, newPrice, type } = array[j]
+                                    +product(type, name, img, price, newPrice)

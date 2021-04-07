@@ -3,8 +3,62 @@ extends ./base/base.pug
 block variables
     - const title = "Trang chủ"
     - const current = "/"
+    include ./variables/index_variables.pug
+    include ./variables/product_variables.pug
+
+include ./components/carousel.pug
+include ./components/product.pug
 
 block layout
     include ./partials/header.pug
-        
+
+    section.introduce
+        div.introduce-text.col-10.col-md-8.col-lg-6.offset-1.offset-md-2.offset-lg-3.text-center
+            h1.title Giới thiệu
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id porro, cupiditate quod nisi neque rem, provident eaque qui vel ducimus exercitationem quos esse mollitia, commodi itaque ipsam deleniti officia. Debitis dignissimos corrupti, quos aperiam, laudantium a, deserunt laborum obcaecati blanditiis aspernatur vero possimus quis neque doloribus optio sequi ad magnam asperiores culpa nesciunt odio? Maxime aliquid nostrum, voluptates ex aspernatur, iusto sit accusantium, consectetur velit voluptas alias modi!
+            a.btn.btn-primary Xem thêm
+
+    section.hot-product
+        div.col-sm-10.col-md-6.col-lg-10.col-xl-8.offset-sm-1.offset-md-3.offset-lg-1.offset-xl-2
+            div.hp-img
+                div.hp-inner
+                    div.product-item.product-item--big.row
+                        div.col-lg-7
+                            div.product-img.product--sale
+                                img(src="./assets/img/14.jpg", alt="Wine number 14")
+                        div.col-lg-5
+                            div.product-text
+                                h3.subtitle Rượu nho năm 1987
+                                div.product-price
+                                    p.new-price 330.000
+                                        span đ
+                                btn.btn.btn-primary Add to cart
+                                p.product-desc Một hợp chất có trong rượu vang gọi là resverato có khả năng làm tăng tối đa tuổi thọ. Resverato còn có khả năng ngăn chặn mật độ oxy hóa của protein béo.
+                                div.countdown
+                                    div.d-flex.flex-wrap
+                                        div.countdown-item.col-6
+                                            h1 334
+                                            p Ngày
+                                        div.countdown-item.col-6
+                                            h1 26
+                                            p Giờ
+                                        div.countdown-item.col-6
+                                            h1 60
+                                            p Phút
+                                        div.countdown-item.col-6
+                                            h1 15
+                                            p Giây
+
+    section.new-product
+        div.container
+            h1.title Sản phẩm mới
+            div.d-none.d-lg-block
+                +carouselMultiple("carousel-multiple-1", productItems, 4)
+            div.d-none.d-lg-none.d-md-block
+                +carouselMultiple("carousel-multiple-1", productItems, 3)
+            div.d-none.d-md-none.d-sm-block
+                +carouselMultiple("carousel-multiple-1", productItems, 2)
+            div.d-sm-none
+                +carouselMultiple("carousel-multiple-1", productItems, 1)
+                                                        
     include ./partials/footer.pug

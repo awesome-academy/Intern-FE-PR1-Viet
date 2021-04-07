@@ -1,7 +1,4 @@
 .footer {
-  position: relative;
-  top: 100px;
-
   .footer-top {
     .footer-img {
       @include border-bottom(1px, $gray);
