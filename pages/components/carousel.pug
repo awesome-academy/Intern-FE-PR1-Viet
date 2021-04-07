@@ -1,33 +1,34 @@
 mixin carousel(id, defaultImg, array)
-    section.slider 
-        div.carousel.slide(id="" + id, data-pause="false", data-ride="carousel", data-interval="5000")
-            ol.carousel-indicators 
-                - for (var i = 0; i < 3; i++) {
-                    if i === 0
-                        li(data-target="#" + id, data-slide-to="" + i, class="active")
-                    else
-                        li(data-target="#" + id, data-slide-to="" + i)
-                - }
-            div.carousel-inner
-                each val in array
-                    if val.img === defaultImg
-                        div.carousel-item.active
-                            img.d-block.w-100(src="./assets/img/" + val.img, alt="Slide number " + i)
-                            div.carousel-text
-                                p.carousel-title=val.title
+    div.carousel.slide(id="" + id, data-pause="false", data-ride="carousel", data-interval="5000")
+        ol.carousel-indicators 
+            - for (var i = 0; i < 3; i++) {
+                if i === 0
+                    li(data-target="#" + id, data-slide-to="" + i, class="active")
+                else
+                    li(data-target="#" + id, data-slide-to="" + i)
+            - }
+        div.carousel-inner
+            each val in array
+                if val.img === defaultImg
+                    div.carousel-item.active
+                        img(src="./assets/img/" + val.img, alt="Slide number " + i)
+                        div.carousel-text
+                            p.carousel-title=val.title
+                                if val.year
                                     span=" since " + val.year 
-                                    span.carousel-subtitle=val.subtitle
-                    else
-                        div.carousel-item
-                            img.d-block.w-100(src="./assets/img/" + val.img, alt="Slide number " + i)
-                            div.carousel-text
-                                p.carousel-title=val.title 
+                                span.carousel-subtitle=val.subtitle
+                else
+                    div.carousel-item
+                        img(src="./assets/img/" + val.img, alt="Slide number " + i)
+                        div.carousel-text
+                            p.carousel-title=val.title 
+                                if val.year
                                     span=" since " + val.year
-                                    span.carousel-subtitle=val.subtitle
-            a.carousel-control-prev(href="#" + id, role="button", data-slide="prev")
-                span.fas.fa-chevron-left
-            a.carousel-control-next(href="#" + id, role="button", data-slide="next")
-                span.fas.fa-chevron-right
+                                span.carousel-subtitle=val.subtitle
+        a.carousel-control-prev(href="#" + id, role="button", data-slide="prev")
+            span.fas.fa-chevron-left
+        a.carousel-control-next(href="#" + id, role="button", data-slide="next")
+            span.fas.fa-chevron-right
 
 mixin carouselMultiple(id, array, numberItem)
     div.carousel.slide.carousel-multi-item(id=id + numberItem, data-pause="false", data-ride="carousel", data-interval="5000")

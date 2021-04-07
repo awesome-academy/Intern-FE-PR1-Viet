@@ -16,7 +16,8 @@ header.header
                     input(type='text', placeholder='Tìm kiếm ở đây...')
                     span.fas.fa-search
         - if (current === '/')
-            +carousel('carouselHeader', carousel_items[0].img, carousel_items)
+            section.slider 
+                +carousel('carouselHeader', carousel_items[0].img, carousel_items)
 
     nav.navbar.navbar-expand-lg
         div.container.align-items-stretch
