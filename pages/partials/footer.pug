@@ -1,0 +1,64 @@
+include ../variables/footer_variables.pug
+
+// Footer
+footer.footer
+    div.container
+        div.footer-top
+            div.row
+                each item in footer_img_items
+                    - const { img, alt } = item
+                    div.footer-img.col-sm-4.col-8.offset-sm-0.offset-2
+                        img(src="./assets/img/" + img, alt=alt)
+        div.footer-widget
+            div.row
+                div.col-lg-4
+                    div.row
+                        each item in footer_widget_items
+                            - const { title, items } = item
+                            div.footer-widget-item.col-sm-6
+                                h3=title
+                                ul
+                                    each item in items
+                                        - const { title, link } = item
+                                        li
+                                            a.btn-link(href=link)=title
+                div.col-lg-8
+                    div.row
+                        div.footer-contact.col-md-6
+                            h3 Gửi email
+                            p Gửi email cho chúng tôi để được hỗ trợ
+                            div.input-group
+                                input(type="email", placeholder="Nhập email", autocomplete="off")
+                                button.btn Gửi
+                            div.socials
+                                a.btn-link(href="#")
+                                    span.fab.fa-twitter
+                                a.btn-link(href="#")
+                                    span.fab.fa-google-plus-g
+                                a.btn-link(href="#")
+                                    span.fab.fa-dribbble
+                                a.btn-link(href="#")
+                                    span.fab.fa-linkedin-in
+                                a.btn-link(href="#")
+                                    span.fab.fa-snapchat-ghost
+                        div.footer-info.col-md-6
+                            h3 Liên hệ
+                            p
+                                i.fas.fa-map-marker-alt
+                                | Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+                            p
+                                i.fas.fa-phone-alt
+                                span (04) 6674 2332 - 
+                                i.fas.fa-phone-alt
+                                span (04) 3786 8904
+                            p
+                                i.fas.fa-phone-alt
+                                span (08) 6680 9686
+                                i.fas.fa-envelope
+                                span Support@bizweb.vn
+    div.footer-bottom
+        div.container
+            p &copy; Copyright 2008-2014 DKT Technology JSC
+            img(src="./assets/img/payment-method.png", alt="Payment method")
+
+// End of Footer
