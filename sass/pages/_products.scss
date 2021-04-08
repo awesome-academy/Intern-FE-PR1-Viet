@@ -9,7 +9,7 @@
   @include padding-y(2rem, 4rem);
 
   .product-sidebar {
-    > div {
+    div[class^='product'] {
       padding-bottom: 2rem;
     }
 
@@ -87,6 +87,80 @@
             background-color: $primary-color;
             color: $white;
           }
+        }
+      }
+    }
+  }
+
+  .product-content {
+    .product-header {
+      padding: 0.5rem 1rem;
+      @include border(2px, $gray);
+      @include flex(space-between, center, row);
+
+      .product-view {
+        label {
+          color: $dark-gray;
+          font-size: 1.2rem;
+          margin-bottom: 0;
+          padding-right: 0.8rem;
+          cursor: pointer;
+          @include transition-easeinout(0.3s);
+
+          &:checked {
+            color: $primary-color;
+          }
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+
+      .product-pagination {
+        .page-item {
+          a {
+            font-size: 1.1rem;
+            padding: 0 4px;
+            color: $dark-gray;
+            @include border(0, transparent, 0);
+            @include transition-easeinout(0.3s);
+          }
+
+          &.active,
+          &:hover {
+            a {
+              background-color: transparent;
+              color: $primary-color;
+            }
+          }
+
+          &:first-of-type,
+          &:last-of-type {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+
+    .product-gallery {
+      > div {
+        display: none;
+        opacity: 0;
+      }
+
+      .rad {
+        @include hidden;
+
+        &:checked + div {
+          display: block;
+          opacity: 1;
+        }
+      }
+
+      .product-grid {
+        .product-item {
+          @include padding-y(1rem, 1.5rem);
         }
       }
     }

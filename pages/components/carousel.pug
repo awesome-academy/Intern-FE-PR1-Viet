@@ -47,11 +47,11 @@ mixin carouselMultiple(id, array, numberItem)
                             - for (var j = i * numberItem; j < condition1 ; j++)
                                 div(class=condition2)
                                     - const { name, img, price, newPrice, type } = array[j]
-                                    +product(type, name, img, price, newPrice)
+                                    +product-grid(type, name, img, price, newPrice)
                 else
                     div.carousel-item
                         div.row
                             - for (var j = i * numberItem; j < condition1 ; j++)
                                 div(class=condition2)
                                     - const { name, img, price, newPrice, type } = array[j]
-                                    +product(type, name, img, price, newPrice)
+                                    +product-grid(type, name, img, price, newPrice)

@@ -1,0 +1,18 @@
+mixin tabs(tabsItems)
+    - let tabActive = function (tab) { return tab.active ? 'active' : '' }
+
+    mixin tab(index)
+        - tabsItems[index].body = block;
+    block
+
+    - tabsItems[0].active = tabsItems[0].active || !tabsItems.some(function (tab) { return tab.active; })
+
+    ul.nav.nav-tabs
+        each tab, index in tabsItems
+            li.nav-item
+                a.nav-link(class=tabActive(tab), href="#tab-id-" + index, data-toggle="tab")= tab.title
+
+    div.tab-content
+        each tab, index in tabsItems
+            div.tab-pane(id="tab-id-" + index, class=tabActive(tab))
+                - tab.body && tab.body()

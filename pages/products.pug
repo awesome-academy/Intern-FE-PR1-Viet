@@ -7,6 +7,8 @@ block variables
     include ./variables/product_variables.pug
 
 include ./components/breadcrumb.pug
+include ./components/pagination.pug
+include ./components/product.pug
 
 block layout
     include ./partials/header.pug
@@ -22,31 +24,52 @@ block layout
             div.row
                 div.col-lg-3
                     div.product-sidebar
-                        div.product-category
-                            h1.subtitle Danh mục sản phẩm
-                            each item in productCategories
-                                - const { type, items } = item
-                                h3=type
-                                ul
-                                    each item in items
-                                        - const { label, amount } = item
-                                        li(class=`${label === productCategories[0].items[3].label ? 'active' : ''}`)
-                                            a.btn.btn-link=label
-                                                span=`(${amount})`
-                        div.product-compare
-                            h1.subtitle So sánh sản phẩm
-                            p Bạn chưa có sản phẩm nào để so sánh
-                        div.product-tag
-                            h1.subtitle Tag sản phẩm
-                            div.tags
-                                each item in productTags
-                                    if item === productTags[0]
-                                        button.btn.tag.tag--active=item
-                                    else
-                                        button.btn.tag=item
-                        div.product-banner
-                            img(src="./assets/img/ads.jpg")
-                div.col-lg-9
+                        div.row
+                            div.col-lg-12.col-sm-6
+                                div.product-category
+                                    h1.subtitle Danh mục sản phẩm
+                                    each item in productCategories
+                                        - const { type, items } = item
+                                        h3=type
+                                        ul
+                                            each item in items
+                                                - const { label, amount } = item
+                                                li(class=`${label === productCategories[0].items[3].label ? 'active' : ''}`)
+                                                    a.btn.btn-link=label
+                                                        span=`(${amount})`
+                            div.col-lg-12.col-sm-6
+                                div.product-compare
+                                    h1.subtitle So sánh sản phẩm
+                                    p Bạn chưa có sản phẩm nào để so sánh
+                                div.product-tag
+                                    h1.subtitle Tag sản phẩm
+                                    div.tags
+                                        each item in productTags
+                                            if item === productTags[0]
+                                                button.btn.tag.tag--active=item
+                                            else
+                                                button.btn.tag=item
+                                div.product-banner
+                                    img(src="./assets/img/ads.jpg")
+                div.col-lg-9          
+                    div.product-content
+                        div.product-header
+                            div.product-view
+                                label(for='grid-view')
+                                    span.fas.fa-th
+                                label(for='list-view')
+                                    span.fas.fa-list
+                            div.product-pagination
+                                +pagination(5, 1, null, null)
+                        div.product-gallery
+                            input#grid-view.rad(type='radio', name='radio', checked)
+                            div.product-grid
+                                div.row
+                                    - for (var i = 0; i < 9; i++)
+                                        - const { name, img, price, newPrice, type } = productItems[i]
+                                        div.col-md-4.col-sm-6
+                                            +product-grid(type, name, img, price, newPrice)
+                            input#list-view.rad(type='radio', name='radio')
                     
 
         

@@ -5,54 +5,8 @@
     overflow: hidden;
 
     .product-widget {
-      background-color: $black;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -2rem;
       @include flex(inherit, center, row);
       @include transition-easeinout(0.3s);
-
-      .product-widget-item {
-        color: $dark-gray;
-        text-align: center;
-        font-size: 0.85rem;
-        width: 20%;
-        padding: 0.3rem 0;
-        @include transition-easeinout(0.3s);
-
-        @include respond-to('extra-small') {
-          font-size: 0.7rem;
-        }
-
-        span {
-          font-size: 1rem;
-          padding-right: 5px;
-
-          @include respond-to('extra-small') {
-            font-size: 0.8rem;
-          }
-        }
-
-        &:not(:last-of-type) {
-          width: 40%;
-          border-right: 1px solid $dark-gray;
-        }
-
-        &:hover {
-          color: $white;
-        }
-      }
-    }
-
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 1.2rem 1.5rem 0.2rem;
-      color: $white;
-      @include text-capitalize(0.8rem, 400);
-      @include transform-translate-rotate(-36%, -25%, -45deg);
     }
 
     &.product--sale {
@@ -84,17 +38,20 @@
         box-shadow: 0 0 0 3px $white, 0 0 0 4px $red;
       }
     }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1.2rem 1.5rem 0.2rem;
+      color: $white;
+      @include text-capitalize(0.8rem, 400);
+      @include transform-translate-rotate(-36%, -25%, -45deg);
+    }
   }
 
   .product-text {
-    padding-top: 1rem;
-    .product-name {
-      @include text-uppercase(0.95rem, 400);
-    }
-
     .product-price {
-      font-weight: 400;
-      @include padding-y(0.2rem, 0.7rem);
       @include flex(center, center, row, 5px);
 
       span {
@@ -103,21 +60,11 @@
 
       .new-price {
         color: $primary-color;
-        font-size: 1.2rem;
-
-        span {
-          font-size: 13px;
-        }
       }
 
       .old-price {
         color: $dark-gray;
         text-decoration: line-through;
-        font-size: 0.8rem;
-
-        span {
-          font-size: 11px;
-        }
       }
 
       .new-price,
@@ -126,8 +73,8 @@
 
         span {
           position: absolute;
-          top: 0px;
-          right: -7px;
+          top: 0;
+          right: -8px;
         }
       }
     }
@@ -149,7 +96,21 @@
         @include padding-y(0, 1.2rem);
 
         .new-price {
-          font-size: 1.7rem;
+          font-size: 2rem;
+          font-weight: 300;
+
+          span {
+            font-size: 1rem;
+            top: 5px;
+          }
+        }
+
+        .old-price {
+          font-size: 1rem;
+
+          span {
+            font-size: 11px;
+          }
         }
       }
 
@@ -161,17 +122,89 @@
     }
   }
 
-  &:hover {
-    a {
-      color: $primary-color;
+  &.product-item--grid {
+    .product-img {
+      .product-widget {
+        background-color: $black;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2rem;
+
+        .product-widget-item {
+          color: $dark-gray;
+          text-align: center;
+          font-size: 0.85rem;
+          width: 20%;
+          padding: 0.3rem 0;
+          @include transition-easeinout(0.3s);
+
+          @include respond-to('extra-small') {
+            font-size: 0.7rem;
+          }
+
+          span {
+            font-size: 1rem;
+            padding-right: 5px;
+
+            @include respond-to('extra-small') {
+              font-size: 0.8rem;
+            }
+          }
+
+          &:not(:last-of-type) {
+            width: 40%;
+            border-right: 1px solid $dark-gray;
+          }
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
     }
 
-    .btn {
-      background-color: $primary-color;
+    .product-text {
+      padding-top: 1rem;
+
+      .product-name {
+        @include text-uppercase(0.95rem, 400);
+      }
+
+      .product-price {
+        font-weight: 400;
+        @include padding-y(0.2rem, 0.7rem);
+
+        .new-price {
+          font-size: 1.2rem;
+
+          span {
+            font-size: 13px;
+          }
+        }
+
+        .old-price {
+          font-size: 0.8rem;
+
+          span {
+            font-size: 11px;
+          }
+        }
+      }
     }
 
-    .product-widget {
-      bottom: 0;
+    &:hover {
+      a {
+        color: $primary-color;
+      }
+
+      .btn {
+        background-color: $primary-color;
+      }
+
+      .product-widget {
+        bottom: 0;
+      }
     }
   }
 }
