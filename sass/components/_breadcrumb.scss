@@ -1,0 +1,24 @@
+.breadcrumb {
+  padding-top: calc(#{$responsive-padding} * 1.5);
+  padding-left: 0;
+  padding-bottom: 0.5rem;
+  background-color: transparent;
+  font-size: 1rem;
+
+  .breadcrumb-item {
+    a {
+      color: $dark-gray;
+    }
+
+    &:before {
+      @include padding-x(5px, 0px);
+    }
+
+    &.active {
+      color: $primary-color;
+      &:before {
+        padding-right: 5px;
+      }
+    }
+  }
+}
