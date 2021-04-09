@@ -160,7 +160,7 @@
 
       .product-grid {
         .product-item {
-          @include padding-y(1rem, 1.5rem);
+          @include padding-y(1.5rem, 1rem);
         }
       }
     }
