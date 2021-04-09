@@ -16,7 +16,7 @@
     <link href="./assets/lib/elegant-icon/elegant-icon.css" rel="stylesheet">
     <!-- Styles-->
     <link href="./css/main.css" rel="stylesheet">
-    <title>Blog | Wine Shop</title>
+    <title>Giỏ hàng | Wine Shop</title>
   </head>
   <body>
     <!-- Header-->
@@ -184,7 +184,7 @@
                 </div>
               </li>
               <li class="nav-item"><a class="btn-link" href="/about.html">Thông tin</a></li>
-              <li class="nav-item"><a class="btn-link active" href="/blog.html">Blog</a></li>
+              <li class="nav-item"><a class="btn-link" href="/blog.html">Blog</a></li>
               <li class="nav-item"><a class="btn-link" href="/contact.html">Liên hệ</a></li>
             </ul>
           </div>
@@ -192,6 +192,105 @@
       </nav>
     </header>
     <!-- End of Header-->
+    <nav> 
+      <div class="container"> 
+        <ol class="breadcrumb"> 
+          <li class="breadcrumb-item"> <a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item"> <a href="products.html">Sản phẩm</a></li>
+          <li class="breadcrumb-item active">Giỏ hàng</li>
+        </ol>
+      </div>
+    </nav>
+    <section class="cart">
+      <div class="container">
+        <h2 class="subtitle">Giỏ hàng</h2>
+        <div class="table-responsive">
+          <table class="cart-table">
+            <colgroup>
+              <col width="15%">
+              <col width="35%">
+              <col width="15%">
+              <col width="15%">
+              <col width="15%">
+              <col width="5%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng số</th>
+                <th>Xóa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cart-img"><img src="./assets/img/1.jpg" alt="Rượu vang Đà Lạt"></td>
+                <td class="cart-name">Rượu vang Đà Lạt</td>
+                <td class="cart-price">
+                  <p>330.000<span>đ</span></p>
+                </td>
+                <td class="cart-amount">
+                  <input type="number" value="1" min="1" max="100">
+                </td>
+                <td class="cart-total">
+                  <p>330.000<span>đ</span></p>
+                </td>
+                <td class="cart-remove"><span class="far fa-trash-alt"></span></td>
+              </tr>
+              <tr>
+                <td class="cart-img"><img src="./assets/img/2.jpg" alt="Rượu vang Đà Lạt"></td>
+                <td class="cart-name">Rượu vang Đà Lạt</td>
+                <td class="cart-price">
+                  <p>370.000<span>đ</span></p>
+                </td>
+                <td class="cart-amount">
+                  <input type="number" value="1" min="1" max="100">
+                </td>
+                <td class="cart-total">
+                  <p>370.000<span>đ</span></p>
+                </td>
+                <td class="cart-remove"><span class="far fa-trash-alt"></span></td>
+              </tr>
+              <tr>
+                <td class="cart-img"><img src="./assets/img/3.jpg" alt="Rượu vang Đà Lạt"></td>
+                <td class="cart-name">Rượu vang Đà Lạt</td>
+                <td class="cart-price">
+                  <p>230.000<span>đ</span></p>
+                </td>
+                <td class="cart-amount">
+                  <input type="number" value="1" min="1" max="100">
+                </td>
+                <td class="cart-total">
+                  <p>230.000<span>đ</span></p>
+                </td>
+                <td class="cart-remove"><span class="far fa-trash-alt"></span></td>
+              </tr>
+              <tr>
+                <td class="cart-img"><img src="./assets/img/4.jpg" alt="Rượu vang Đà Lạt"></td>
+                <td class="cart-name">Rượu vang Đà Lạt</td>
+                <td class="cart-price">
+                  <p>450.000<span>đ</span></p>
+                </td>
+                <td class="cart-amount">
+                  <input type="number" value="1" min="1" max="100">
+                </td>
+                <td class="cart-total">
+                  <p>450.000<span>đ</span></p>
+                </td>
+                <td class="cart-remove"><span class="far fa-trash-alt"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cart-controls text-right">
+          <button class="btn btn-primary">Tiếp tục mua hàng</button>
+          <button class="btn btn-primary">Xóa</button>
+          <button class="btn btn-primary">Cập nhật</button>
+        </div>
+      </div>
+    </section>
     <!-- Footer-->
     <footer class="footer">
       <div class="container">
