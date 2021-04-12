@@ -8,6 +8,7 @@
 @import 'layouts/header';
 @import 'layouts/footer';
 
+@import 'components/blog';
 @import 'components/breadcrumb';
 @import 'components/button';
 @import 'components/product';
@@ -15,5 +16,6 @@
 
 @import 'pages/index';
 @import 'pages/about';
+@import 'pages/blog';
 @import 'pages/cart';
 @import 'pages/products';

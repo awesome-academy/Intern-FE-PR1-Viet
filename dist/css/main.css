@@ -569,6 +569,46 @@ img {
       -webkit-filter: grayscale(1);
       filter: grayscale(1); }
 
+.blog-item {
+  padding-bottom: 1.5rem; }
+  .blog-item .blog-img {
+    width: 100%; }
+    .blog-item .blog-img a {
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%; }
+      .blog-item .blog-img a div {
+        height: 100%; }
+    .blog-item .blog-img:hover + div a {
+      color: #e3ab39; }
+  .blog-item .blog-text a:not(.btn) {
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 500; }
+  .blog-item .blog-text h3 {
+    color: #818181;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .blog-item .blog-text p {
+    font-size: 0.9rem;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; }
+  .blog-item .blog-text .btn {
+    color: #e3ab39; }
+
 .breadcrumb {
   padding-top: calc(calc(1vh + 0.5rem) * 1.5);
   padding-left: 0;
@@ -1071,41 +1111,6 @@ img {
 
 .more {
   padding-bottom: 2rem; }
-  .more .news-section .news-item {
-    padding-bottom: 1.5rem; }
-    .more .news-section .news-item .news-img {
-      width: 100%; }
-      .more .news-section .news-item .news-img a {
-        display: block;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        width: 100%;
-        height: 0;
-        padding-top: 56.25%; }
-        .more .news-section .news-item .news-img a div {
-          height: 100%; }
-    .more .news-section .news-item .news-text a:not(.btn) {
-      display: inline-block;
-      letter-spacing: 1px;
-      margin-top: 0.8rem;
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      font-weight: 500; }
-    .more .news-section .news-item .news-text h3 {
-      color: #818181;
-      font-size: 0.85rem;
-      font-weight: 400;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem; }
-    .more .news-section .news-item .news-text p {
-      font-size: 0.9rem;
-      overflow: hidden;
-      -o-text-overflow: ellipsis;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical; }
 
 .customer-section {
   text-align: center; }
@@ -1169,6 +1174,9 @@ img {
     color: #818181;
     font-size: 0.9rem;
     padding-bottom: 0.5rem; }
+
+.blog {
+  padding-bottom: 4rem; }
 
 .cart {
   padding-bottom: 4rem; }
