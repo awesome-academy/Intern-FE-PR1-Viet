@@ -1,0 +1,80 @@
+.login-register {
+  padding-bottom: 4rem;
+
+  .login-register-header {
+    padding-bottom: 2rem;
+    @include flex(space-between, center, row);
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
+  form {
+    padding: 2.5rem 3rem;
+    @include border(1px, $gray);
+
+    @include respond-to('extra-small') {
+      padding: 2rem 1.5rem;
+    }
+
+    h3 {
+      @include text-uppercase(1.2rem, 400);
+    }
+
+    p {
+      padding-bottom: 2rem;
+    }
+
+    .input-group {
+      padding-bottom: 1.5rem;
+      @include flex(inherit, flex-start, row);
+
+      label {
+        display: inline-block;
+        width: 150px;
+
+        @include respond-to('medium') {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      input {
+        width: calc(100% - 150px);
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+        @include border(1px, $gray, 3px);
+
+        @include respond-to('medium') {
+          width: 100%;
+        }
+      }
+    }
+
+    .form-options {
+      font-size: 0.9rem;
+      padding-left: 150px;
+      padding-bottom: 1rem;
+      @include flex(space-between, center, row);
+
+      @include respond-to('medium') {
+        padding-left: 0;
+      }
+
+      .checkmark-item {
+        label {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    button {
+      margin-left: 150px;
+
+      @include respond-to('medium') {
+        margin-left: 0;
+      }
+    }
+  }
+}

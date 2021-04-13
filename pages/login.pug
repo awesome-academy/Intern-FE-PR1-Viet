@@ -1,0 +1,40 @@
+extends ./base/base.pug
+
+block variables
+    - const title = "Giỏ hàng"
+    - const current = "/cart.html"
+    - const levels = [["Trang chủ", "/"], ["Đăng nhập", "login.html"]]
+
+include ./components/breadcrumb.pug
+
+block layout
+    include ./partials/header.pug
+
+    +breadcrumb(levels)
+
+    section.login-register
+        div.container
+            div.login-register-header
+                h1.subtitle Đăng nhập
+                a.btn.btn-primary.btn-primary--large(href="#") Đăng ký
+            form.login-form
+                h3 Khách hàng đăng nhập
+                p Nếu bạn có một tài khoản, xin vui lòng đăng nhập.
+                div.input-group
+                    label(for="email") Email
+                        span.asterisk *
+                    input#email(type="email", autocomplete="off")
+                div.input-group
+                    label(for="password") Password
+                        span.asterisk *
+                    input#password(type="password", autocomplete="off")
+                div.form-options
+                    div.checkmark-item
+                        label(for="save-pass")
+                            | Lưu mật khẩu
+                            input#save-pass(type="checkbox")
+                            span.checkmark
+                    a.btn-link(href="#") Quên mật khẩu?
+                button.btn.btn-primary Đăng nhập
+    
+    include ./partials/footer.pug

@@ -19,7 +19,7 @@
   padding-bottom: 20px;
   margin-bottom: 1.8rem;
   background: url('../assets/img/title-dark.png') no-repeat center bottom;
-  @include text-uppercase(1.2rem, 400);
+  @include text-uppercase(1.3rem, 400);
 }
 
 .subtitle {
@@ -27,7 +27,7 @@
   padding-bottom: 15px;
   margin-bottom: 1.5rem;
   background: url('../assets/img/titleleft-dark.png') no-repeat left bottom;
-  @include text-uppercase(1.1rem, 400);
+  @include text-uppercase(1.3rem, 400);
 }
 
 .hover-effect-primary {

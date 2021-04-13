@@ -49,7 +49,17 @@
 
   &.btn-primary--large {
     font-size: 0.8rem;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 2.2rem;
+  }
+}
+
+.btn-secondary {
+  color: $dark-gray;
+  padding: 0;
+  @include transition-easeinout(0.3s);
+
+  &:hover {
+    color: $primary-color;
   }
 }
 
