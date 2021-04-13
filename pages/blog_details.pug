@@ -1,0 +1,87 @@
+extends ./base/base.pug
+
+block variables
+    - const title = "Blog"
+    - const current = "/blog.html"
+    - const levels = [["Trang chủ", "/"], ["Blog", "blog.html"], ["Chi tiết Blog", "blog_details.html"]]
+    include ./variables/blog_variables.pug
+
+include ./components/breadcrumb.pug
+include ./components/pagination.pug
+
+block layout
+    include ./partials/header.pug
+
+    +breadcrumb(levels)
+
+    section.blog-details
+        div.container
+            h1.subtitle Blog
+            div.row
+                div.col-lg-3.col-md-4.order-2.order-md-1
+                    div.blog-sidebar
+                        div.blog-latest
+                            h1 Bài viết mới nhất
+                            - for (var i = 0; i < 3; i++)
+                                - const { title, img, date } = blogs[i];
+                                div.blog-latest-item
+                                    div.row
+                                        div.col-4.pr-0
+                                            div.blog-img.hover-effect-secondary
+                                                a(href="/blog_details.html" style=`background-image: url(./assets/img/${img})`)
+                                                    span.fas.fa-link
+                                        div.col-8.pr-0
+                                            a.btn-link(href="#")=title
+                                            p
+                                                span.far.fa-calendar
+                                                =date
+                        div.blog-tag
+                            h1 Blog Tags 
+                            div.tags
+                                each item in blogTags
+                                    if item === blogTags[0]
+                                        button.btn.tag.tag--active=item
+                                    else
+                                        button.btn.tag=item
+                        div.blog-latest-video
+                            h1 Latest Video
+                            div.blog-video
+                                iframe(src="https://www.youtube.com/embed/__Eo-dvEH7g?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0", title="Latest Video blog", frameborder="0", allowfullscreen)
+                div.col-lg-9.col-md-8.order-1.order-md-2
+                    div.blog-content
+                        - const { img, author, date, comments, content } = blogs[0];
+                        div.blog-img
+                            img(src=`./assets/img/${img}`, alt=title)
+                        h1=blogs[0].title
+                        h3=`Đăng bởi ${author} | ${date} | ${comments.length} bình luận`
+                        div.content=content
+                        form.blog-form
+                            h3 Đóng góp ý kiến
+                            div.input-group
+                                label(for="name") Tên
+                                    span.asterisk *
+                                input#name(type="text", name="name", autocomplete="off")
+                            div.input-group
+                                label(for="email") Email
+                                    span.asterisk *
+                                input#email(type="email", name="email", autocomplete="off")
+                            div.input-group
+                                label(for="comment") Ý kiến
+                                    span.asterisk *
+                                textarea#comment(name="comment", rows="10", autocomplete="off")
+                            button.btn.btn-primary Gửi ý kiến            
+                        div.blog-comments
+                            h1=`Bình luận (${comments.length})`
+                            each item in comments
+                                - const { name, time, comment } = item
+                                div.comment-item
+                                    div.comment-header
+                                        div.comment-info
+                                            h3.comment-name=`Bình luận bởi ${name}`
+                                            h3.comment-time=`Cách đây ${time} giờ`
+                                        button.btn.btn-secondary Trả lời
+                                    div.comment-content=comment
+                            +pagination(3, 1, null, null)
+
+
+    include ./partials/footer.pug
