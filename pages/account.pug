@@ -1,0 +1,132 @@
+extends ./base/base.pug
+
+block variables
+    - const title = "Địa chỉ"
+    - const current = "/account.html"
+    - const levels = [["Trang chủ", "/"], ["Địa chỉ", "account.html"]]
+    include ./variables/account_variables.pug
+
+include ./components/breadcrumb.pug
+
+block layout
+    include ./partials/header.pug
+
+    +breadcrumb(levels)
+    
+    section.account
+        div.container
+            h1.subtitle Địa chỉ
+            div.row
+                div.col-lg-6.order-2.order-lg-1
+                    h3 Địa chỉ của bạn
+                    each item in account_addresses
+                        - const { firstName, lastName, company, address, city, country, postal, phone, isEdit } = item
+                        - if (isEdit)
+                            div.account-addresses
+                                ul
+                                    li
+                                        span Tên:
+                                        input(type="text", value=firstName)
+                                    li
+                                        span Họ &amp; tên đệm:
+                                        input(type="text", value=lastName)
+                                    li
+                                        span Công ty:
+                                        input(type="text", value=company)
+                                    li
+                                        span Địa chỉ:
+                                        input(type="text", value=address)
+                                    li
+                                        span Thành phố:
+                                        input(type="text", value=city)
+                                    li
+                                        span Quốc tịch:
+                                        input(type="text", value=country)
+                                    li
+                                        span Postal/Zip Code:
+                                        input(type="text", value=postal)
+                                    li
+                                        span Phone:
+                                        input(type="text", value=phone)
+                                div.checkmark-item
+                                    label(for="save-address")
+                                        | Đặt làm địa chỉ mặc định?
+                                        input#save-address(type="checkbox", checked)
+                                        span.checkmark
+                                div.text-left
+                                    button.btn-primary.btn-primary--blue Chỉnh sửa địa chỉ
+                                    button.btn-primary Xóa
+                        - else
+                            div.account-addresses
+                                ul
+                                    li
+                                        span Tên:
+                                        =firstName
+                                    li
+                                        span Họ &amp; tên đệm:
+                                        =lastName
+                                    li
+                                        span Công ty:
+                                        =company
+                                    li
+                                        span Địa chỉ:
+                                        =address
+                                    li
+                                        span Thành phố:
+                                        =city
+                                    li
+                                        span Quốc tịch:
+                                        =country
+                                    li
+                                        span Postal/Zip Code:
+                                        =postal
+                                    li
+                                        span Phone:
+                                        =phone
+                                div.text-right
+                                    button.btn-underline--blue Chỉnh sửa địa chỉ
+                div.col-lg-6.order-1.order-lg-2
+                    button.btn-underline--blue Thêm địa chỉ
+                    div.account-addresses
+                        ul
+                            li
+                                span Tên:
+                                input(type="text", value="Giang")
+                            li
+                                span Họ &amp; tên đệm:
+                                input(type="text", value="Lê Anh")
+                            li
+                                span Công ty:
+                                input(type="text", value="Cổ phần công nghệ DKT")
+                            li
+                                span Địa chỉ:
+                                input(type="text", value="Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")
+                            li
+                                span Thành phố:
+                                select#city(name="city")
+                                    option(value="Hà Nội") Hà Nội
+                                    option(value="TP.HCM") TP.HCM
+                                    option(value="Đà Nẵng") Đà Nẵng
+                            li
+                                span Quốc tịch:
+                                select#country(name="country")
+                                    option(value="Việt Nam") Việt Nam
+                                    option(value="Mỹ") Mỹ
+                                    option(value="Nhật Bản") Nhật Bản
+                            li
+                                span Postal/Zip Code:
+                                input(type="text", value="2300089")
+                            li
+                                span Phone:
+                                input(type="text", value="0974554928")
+                        div.checkmark-item
+                            label(for="save-address")
+                                | Đặt làm địa chỉ mặc định?
+                                input#save-address(type="checkbox", checked)
+                                span.checkmark
+                        div.text-left
+                            button.btn-primary.btn-primary--blue Cập nhật địa chỉ
+                            button.btn-primary Thoát
+
+            
+    include ./partials/footer.pug
